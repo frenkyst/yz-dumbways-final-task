@@ -1,3 +1,4 @@
+Create file `~/.ssh/config` and insert this
 
 ```
 host app
