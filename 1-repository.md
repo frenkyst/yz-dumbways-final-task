@@ -10,7 +10,8 @@ Create repository
 
 Create key for Github Authentication
 
-![image](https://user-images.githubusercontent.com/67664879/192183283-3aedcee4-6afc-4aba-8505-905c8da2ab8a.png)
+![image](https://user-images.githubusercontent.com/67664879/192318434-e5d9762c-a32a-4b72-b0a5-38838f63d16e.png)
+
 
 ## Step 3
 
@@ -24,15 +25,17 @@ host github.com
     IdentityFile ~/.ssh/github
 ```
 
-![image](https://user-images.githubusercontent.com/67664879/192184921-a81ac38a-4fa2-4d39-b906-ef6b79bad9b0.png)
+![image](https://user-images.githubusercontent.com/67664879/192318642-df981ea5-058e-4d4b-a800-393d17e6e161.png)
 
 ## Step 4
 
 Copy public key to Github
 
-![image](https://user-images.githubusercontent.com/67664879/192185249-54097c5d-6123-42e1-9130-7384bb6e2988.png)
+![image](https://user-images.githubusercontent.com/67664879/192319226-1dd9fa6c-ccfa-4ec3-b170-637279793a5e.png)
 
-![image](https://user-images.githubusercontent.com/67664879/192188534-2e565858-3164-487d-baca-0553e73a03c0.png)
+
+![image](https://user-images.githubusercontent.com/67664879/192319157-5a46046c-a673-43ae-97ee-d11cdb6d2617.png)
+
 
 
 ## Step 5
@@ -43,7 +46,8 @@ Test SSH Connection with this command
 ssh -T git@github.com
 ```
 
-![image](https://user-images.githubusercontent.com/67664879/192185495-be172ac6-7f5f-481a-aa9c-642189d0a892.png)
+![image](https://user-images.githubusercontent.com/67664879/192319702-e8090192-f161-40c0-8f12-8795327c6c5c.png)
+
 
 ## Step 6
 
