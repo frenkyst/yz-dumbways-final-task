@@ -33,8 +33,8 @@ Make `group_vars/all.yml`
 
 ```
 ansible_connection: ssh
-ansible_username: dimasf
-ansible_sudo_pass: <sudo password>
+ansible_user: dimasf
+ansible_become_pass: <sudo password>
 ansible_ssh_private_key_file: <private key location>
 ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
 ```
