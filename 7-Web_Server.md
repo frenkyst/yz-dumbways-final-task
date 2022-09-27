@@ -38,7 +38,7 @@ server {
 server {
   server_name monitoring.dimasf.studentdumbways.my.id;
   location / {
-    proxy_pass http://103.174.114.52:3000;
+    proxy_pass http://10.71.15.234:3000;
     proxy_set_header Host      $host;
     proxy_set_header X-Real-IP $remote_addr;
   }
@@ -50,7 +50,7 @@ server {
 server {
   server_name prometheus.dimasf.studentdumbways.my.id;
   location / {
-    proxy_pass http://103.174.114.52:9090;
+    proxy_pass http://10.71.15.234:9090;
   }
 }
 ```
@@ -59,7 +59,7 @@ server {
 server {
   server_name jenkins.dimasf.studentdumbways.my.id;
   location / {
-    proxy_pass http://103.174.114.52:8080;
+    proxy_pass http://10.71.15.234:8080;
   }
 }
 ```
