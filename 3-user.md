@@ -83,6 +83,12 @@ Make `0-create-user.yml` and insert this
         path: /etc/ssh/sshd_config
         regexp: \#PubkeyAuthentication yes
         line: PubkeyAuthentication yes
+        
+    - name: Enable Public Key Auth
+      ansible.builtin.lineinfile:
+        path: /etc/ssh/sshd_config
+        regexp: \#PubkeyAuthentication yes
+        line: PubkeyAuthentication yes
 
     - name: Reload SSH Config
       ansible.builtin.systemd:
