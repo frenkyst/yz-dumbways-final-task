@@ -64,7 +64,22 @@ services:
     ports:
       - '5000:5000'
     environment:
-      DATABASE_URL: postgresql://<dbuser>:<dbpassword>@database:5432/<dbname>
+      DATABASE_URL: postgresql://literatureuser:literaturepasswd@database:5432/literature
+      NODE_ENV: production
+    networks:
+      - literature-network
+    command: >
+      sh -c "npx sequelize-cli db:migrate --env production &&
+             node server.js"
+  
+  backend-2:
+    container_name: literature-backend-2
+    image: yuuzukatsu/literature-backend:latest
+    restart: unless-stopped
+    ports:
+      - '5001:5000'
+    environment:
+      DATABASE_URL: postgresql://literatureuser:literaturepasswd@database:5432/literature
       NODE_ENV: production
     networks:
       - literature-network
@@ -76,6 +91,7 @@ networks:
   literature-network:
     name: literature-network
     external: true
+
 ```
 
 ## Step 4
@@ -137,9 +153,34 @@ docker image build -f Dockerfile -t yuuzukatsu/literature-frontend:latest .
 ## Step 7
 Make `frontend-compose.yml` and insert this
 ```
-![image](https://user-images.githubusercontent.com/67664879/192499708-6823eb85-7659-4c93-9af6-cec7b30729e0.png)
+version: '3.8'
+services:
+  
+  frontend-1:
+    container_name: literature-frontend-1
+    image: yuuzukatsu/literature-frontend:latest
+    restart: unless-stopped
+    ports:
+      - '3000:3000'
+    networks:
+      - literature-network
+  
+  frontend-2:
+    container_name: literature-frontend-2
+    image: yuuzukatsu/literature-frontend:latest
+    restart: unless-stopped
+    ports:
+      - '3001:3000'
+    networks:
+      - literature-network
+    
+networks:
+  literature-network:
+    name: literature-network
+    external: true
 
 ```
+![image](https://user-images.githubusercontent.com/67664879/192499708-6823eb85-7659-4c93-9af6-cec7b30729e0.png)
 
 ## Step 8
 Run compose with command
