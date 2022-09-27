@@ -64,7 +64,8 @@ services:
     ports:
       - '5000:5000'
     environment:
-      DATABASE_URL: postgresql://literatureuser:literaturepasswd@database:5432/literature
+      DATABASE_URL: postgresql://<dbuser>:<dbpassword>@database:5432/<dbname>
+      NODE_ENV: production
     networks:
       - literature-network
     command: >
